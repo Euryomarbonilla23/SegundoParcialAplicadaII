@@ -63,6 +63,27 @@ namespace SegundoParcialAplicadaII.BLL
             }
             return lista;
         }
+        public static async Task<List<CobrosDetalles>> GetVentasCobradas(int clienteId)
+        {
+            var pendientes = new List<CobrosDetalles>();
+            Contexto contexto = new Contexto();
+
+            var ventas = await contexto.Ventas
+                .Where(v => v.Cliente.ClienteId == clienteId && v.Balance == 0)
+                .AsNoTracking()
+                .ToListAsync();
+
+            foreach (var item in ventas)
+            {
+                pendientes.Add(new CobrosDetalles
+                {
+                    VentaId = item.VentaId,
+                    Cobrado = 0
+                });
+            }
+
+            return pendientes;
+        }
 
     }
 }

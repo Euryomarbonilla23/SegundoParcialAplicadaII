@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 
-namespace SegundoParcialAplicadaII.Controllers
+namespace SegundoParcialAplicadaII.BLL
 {
     public class ClientesBLL
     {
@@ -62,7 +62,7 @@ namespace SegundoParcialAplicadaII.Controllers
             List<Clientes> lista = new List<Clientes>();
             try
             {
-                lista = await _contexto.Clientes.ToListAsync();
+                lista = await _contexto.Cliente.ToListAsync();
             }
             catch (Exception)
             {

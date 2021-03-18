@@ -9,7 +9,9 @@ namespace SegundoParcialAplicadaII.Models
     public class CobrosDetalles
     {
         [Key]
+        
         public int Id { get; set; }
+        public int VentaId { get; set; }
         public int CobroId { get; set; }
         public DateTime Fecha { get; set; }
         public double Monto { get; set; }

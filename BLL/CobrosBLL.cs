@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace SegundoParcialAplicadaII.Controllers
+namespace SegundoParcialAplicadaII.BLL
 {
     public class CobrosBLL
     {
